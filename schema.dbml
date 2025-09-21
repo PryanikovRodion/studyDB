@@ -25,7 +25,7 @@ Table Order{
   id integer [primary key, increment]
   status varchar [not null]
   createDate timestamp [not null, default: "now()"]
-  clientId integer [primary key]
+  clientId integer [not null]
 }
 
 Table OrderContent{
