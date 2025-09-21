@@ -40,8 +40,3 @@ Ref: Product.categoryId > Category.id
 Ref: OrderContent.orderId > Order.id
 Ref: OrderContent.productId > Product.id
 Ref: Order.clientId > Client.id
-
-Ref: Product.categoryId > Category.id
-Ref: OrderContent.orderId > Order.id
-Ref: OrderContent.productId > Product.id
-Ref: Order.clientId > Client.id
