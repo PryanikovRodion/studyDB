@@ -29,6 +29,6 @@ jobs:
       - name: Build and publish dbdocs
         env:
           DBDOCS_TOKEN: ${{ secrets.DBDOCS_TOKEN }} # Використовуємо наш секретний токен
-        run: dbdocs build schema.dbml --project "plants_shop"
+        run: dbdocs build schema.dbml --project "plants__shop"
         # Обов'язково вкажи правильний шлях до твого файлу
         # та назву проєкту на dbdocs.io відповідно до варіанту
