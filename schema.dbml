@@ -1,6 +1,6 @@
 Table Client {
   id integer [primary key, increment]
-  name varchar(128) [not null]
+  name varchar(100) [not null]
   email varchar(256) [unique]
   hash varchar(256) [not null]
   registrationDate timestamp [not null, default: "now()"]
