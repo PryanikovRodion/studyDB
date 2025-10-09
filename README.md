@@ -16,4 +16,4 @@
 З назви зрозуміло, що Clients реалізує сутність клієнта, Products сутність продукту, 
 Category сутність категорії товару, Orders сутність категорії замовлення, OrdersContent реалізує зв'язок М:М між товаром і замовленням.
 
-Посилання на сгенеровану документацію: https://dbdocs.io/pranikovrodion/PryanikovLR1?view=table_structure
+Посилання на сгенеровану документацію: https://dbdocs.io/pranikovrodion/_plants_
