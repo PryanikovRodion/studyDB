@@ -15,5 +15,47 @@
 Для реалізації нашої схеми. Ми створили 5 таблиць: Clients, Products, Category, Orders і OrdersContent.
 З назви зрозуміло, що Clients реалізує сутність клієнта, Products сутність продукту, 
 Category сутність категорії товару, Orders сутність категорії замовлення, OrdersContent реалізує зв'язок М:М між товаром і замовленням.
-
 Посилання на сгенеровану документацію: https://dbdocs.io/pranikovrodion/_plants_
+
+lab_3_DML.sql
+Скрипт демонструє операції маніпуляції даними (DML).
+Вставка (INSERT)
+Додає нових користувачів у таблицю Client:
+INSERT INTO plants.`Client` (name, email, hash) VALUES (...);
+Додає нові товари в таблицю Product:
+INSERT INTO plants.`Product` (`name`, `description`, `price`, `quantity`, `categoryId`) VALUES (...);
+Оновлення (UPDATE)
+Оновлює ціну конкретного товару:
+UPDATE plants.`Product` SET `price` = 8888 WHERE `name` = 'Flower5';
+Видалення (DELETE)
+Видаляє позиції з замовлення:
+DELETE FROM plants.`OrderContent` WHERE `orderId` = 1 AND `productId` > 3;
+Вибірка з умовами (DQL)
+WHERE + AND — фільтрація товарів за категорією та ціною.
+WHERE + IN — пошук замовлень із потрібним статусом.
+WHERE + LIKE — вибірка клієнтів з email, що містить @gmail.com.
+ORDER BY — сортування товарів за ціною за спаданням.
+
+lab_3_DQL_extra.sql
+Скрипт демонструє аналітичні запити (DQL) з використанням агрегатних функцій і об’єднань.
+Агрегація
+COUNT + GROUP BY — підрахунок кількості товарів у кожній категорії.
+SUM — загальна вартість товарів на складі.
+AVG, MIN, MAX — середня, мінімальна і максимальна ціна товарів певної категорії.
+Агрегація з JOIN
+Обчислення загальної суми витрат кожного клієнта через об’єднання таблиць Client, Order і OrderContent.
+HAVING
+Вибір клієнтів, які витратили понад 100 одиниць.
+JOIN-запити
+INNER JOIN — показує замовлення та придбані товари кожного клієнта.
+LEFT JOIN — відображає всіх клієнтів, навіть тих, хто ще не робив замовлень.
+Підзапит (Subquery)
+Пошук товарів, які ніколи не були куплені.
+UNION
+Об’єднання двох вибірок у спільний список імен клієнтів та назв категорій:
+SELECT c.name AS itemName, 'Client' AS itemType
+FROM plants.`Client`
+UNION
+SELECT ct.name AS itemName, 'Category' AS itemType
+FROM plants.`Category`
+ORDER BY itemType, itemName;
