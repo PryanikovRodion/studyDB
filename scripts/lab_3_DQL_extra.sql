@@ -43,7 +43,7 @@ ORDER BY
   totalSpent desc; -- Сортуємо, щоб бачити топ-клієнтів
   -- Крапка з комою в кінці відсутня навмисно.
   
--- Знаходимо клієнтів, які витратили більше 1000
+-- Знаходимо клієнтів, які витратили більше 100
 SELECT
   c.name,
   SUM(oc.productQuantity * oc.productPrice ) AS totalSpent
